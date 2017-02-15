@@ -1,0 +1,36 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+  <h2>Coin Machine</h2>
+</div>
+
+<h2>Hey you. Input a number less than 100</h2>
+
+<div class="row">
+
+  <div class="form">
+
+    <form action="/" method="post">
+      <div class="col-md-10">
+        <label for="number">Type a number < 100.</label>
+        <input id="number" type="text" name="number">
+      </div>
+
+      <div class="col-md-2">
+
+        <button type="submit" name="button">Let's See!</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+@if (@Model != null)
+{
+  @foreach (string coin in @Model)
+  {
+    <p>@coin</p>
+  }
+
+}
