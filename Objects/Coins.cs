@@ -18,19 +18,20 @@ namespace Coins
       int total = _amount;
       if( (total > 0) & (total < 100) )
       {
+        Random Random = new Random();
         int quanQuar = total / 25;
-        string quarterStr = quanQuar.ToString() + " quarter(s)";
+        int quarters = Random.Next(0, quanQuar);
+        string quarterStr = quarters.ToString() + " quarter(s)";
         _coinList.Add(quarterStr);
-
-        int dimeQuan = (total - (quanQuar * 25)) / 10;
-        string dimeStr = dimeQuan.ToString() + " Dime(s)";
+        int dimeQuan = (total - (quarters * 25)) / 10;
+        int dimes = Random.Next(0, dimeQuan);
+        string dimeStr = dimes.ToString() + " Dime(s)";
         _coinList.Add(dimeStr);
-
-        int nickelQuan = (total - (quanQuar * 25) - (dimeQuan * 10)) / 5;
-        string nickelStr = nickelQuan.ToString() + " Nickel(s)";
+        int nickelQuan = (total - (quarters * 25) - (dimes * 10)) / 5;
+        int nickels = Random.Next(0, nickelQuan);
+        string nickelStr = nickels.ToString() + " Nickel(s)";
         _coinList.Add(nickelStr);
-
-        int pennyQuan = (total - (quanQuar * 25) - (dimeQuan * 10) - (nickelQuan * 5)) / 1;
+        int pennyQuan = (total - (quarters * 25) - (dimes * 10) - (nickels * 5)) / 1;
         string pennyStr = pennyQuan.ToString() + " pennie(s)";
         _coinList.Add(pennyStr);
       }

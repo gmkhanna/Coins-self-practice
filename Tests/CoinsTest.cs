@@ -9,7 +9,7 @@ namespace Coins
     [Fact]
     public void Test_ReturnAmount_True()
     {
-      int anyAmount = 94;
+      int anyAmount = 87;
       Coins testAny = new Coins(anyAmount);
       List<string> outputAmount = testAny.Change();
       List<string> check = new List<string> {"1 quarter(s)"};
